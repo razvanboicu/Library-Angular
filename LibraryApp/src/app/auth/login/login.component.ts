@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -12,7 +12,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   logInForm!: FormGroup;
-
   constructor(private router: Router, private _snackBar: MatSnackBar, private http:HttpClient) {}
 
   ngOnInit(): void {
@@ -30,8 +29,10 @@ export class LoginComponent implements OnInit {
   logIn() {
     //todo
     const body={
-      email:"eve.holt@reqres.in",
-      password:"cityslicka"
+      email: this.logInForm.get('email')?.value,
+      password: this.logInForm.get('password')?.value
+      // email:"eve.holt@reqres.in",
+      // password:"cityslicka"
     }
     this.http.post("https://reqres.in/api/login", body).subscribe(
       (res:any)=>{

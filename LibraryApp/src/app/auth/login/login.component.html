@@ -4,7 +4,7 @@
   </div>
 
   <form [formGroup]="logInForm" (ngSubmit)="logIn()">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" color="Black">
       <mat-label>Email</mat-label>
       <input
         matInput
@@ -13,7 +13,8 @@
         required
         name="email"
         autocomplete="on"
-      />
+        #email
+        />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -26,6 +27,7 @@
         required
         name="password"
         autocomplete="on"
+        #password
       />
     </mat-form-field>
 

@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   logout() {
     //todo
     window.localStorage.removeItem("token");
-    this.router.navigateByUrl('/auth');
+    this.router.navigateByUrl('/auth/login');
     this._snackBar.open('Log Out Successfully!', '', {
       duration: 2000,
     });

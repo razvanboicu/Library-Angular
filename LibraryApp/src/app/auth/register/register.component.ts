@@ -26,11 +26,9 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    //todo
-
     const body={
-      "email": "eve.holt@reqres.in",
-      "password": "pistol"
+      email: this.registerForm.get('email')?.value,
+      password:  this.registerForm.get('password')?.value
     }
 
     this.http.post("https://reqres.in/api/register", body).subscribe(

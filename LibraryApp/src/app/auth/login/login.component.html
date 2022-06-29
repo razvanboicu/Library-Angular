@@ -30,7 +30,11 @@
         #password
       />
     </mat-form-field>
-
+    <div class="checkbox">
+        <label>
+            <input name="remember" value="yes" type="checkbox"> Remember me
+        </label>
+    </div>
     <a [routerLink]="'/auth/register'">Don't have an account? Register now!</a>
     <button mat-raised-button color="primary" type="submit">LOG IN</button>
   </form>

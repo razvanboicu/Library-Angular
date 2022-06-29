@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 
+
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-dashboard', 
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })

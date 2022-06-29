@@ -7,13 +7,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 //Material
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-
+    HttpClientModule,
     //Material
     MatButtonModule,
     MatSnackBarModule,

@@ -6,7 +6,8 @@
     </button>
   </div>
   <!-- <div class="content"> -->
-  <table class="table mt-3">
+  
+    <table class="table mt-3" border="1">
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Description</th>
@@ -15,11 +16,11 @@
       </tr>
 
       <tbody>
-        <tr>
-          <td>Star Wars</td>
-          <td>Not great</td>
-          <td>Science-Fiction</td>
-          <td>3</td>
+        <tr *ngFor="let user of userData">
+          <td>{{user.name}}</td>
+          <td>{{user.description}</td>
+          <td>{{user.category}}</td>
+          <td>{{user.rating}}</td>
           <td>
             <button class="btn btn-info">Edit</button>
             <button class="btn btn-danger">Delete</button>

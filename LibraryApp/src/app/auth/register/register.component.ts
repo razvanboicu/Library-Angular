@@ -26,12 +26,15 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    const body={
-      email: this.registerForm.get('email')?.value,
-      password:  this.registerForm.get('password')?.value
-    }
+    // const body={
+    //   email: this.registerForm.get('email')?.value,
+    //   password:  this.registerForm.get('password')?.value
+    // }
 
-    this.http.post("https://reqres.in/api/register", body).subscribe(
+    let body = new FormData();
+    body.append('Username', this.registerForm.get('email')?.value);
+    body.append('Password', this.registerForm.get('password')?.value);
+    this.http.post("https://localhost:7153/users/register", body).subscribe(
       (res:any)=>{
         console.log(res)
         this.router.navigateByUrl('');
@@ -45,7 +48,23 @@ export class RegisterComponent implements OnInit {
         });
       }
 
-    )
+    );
+
+    // this.http.post("https://localhost:7153/users/register", body).subscribe(
+    //   (res:any)=>{
+    //     console.log(res)
+    //     this.router.navigateByUrl('');
+    //     this._snackBar.open('Register Successfully!', '', {
+    //     duration: 2000,
+    // });
+    //   },(error)=>{
+    //     console.error(error)
+    //     this._snackBar.open(error.error.error, '',{
+    //       duration:2000,
+    //     });
+    //   }
+
+    // )
 
     console.log('register');
   }

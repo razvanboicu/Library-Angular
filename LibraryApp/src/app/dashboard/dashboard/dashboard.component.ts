@@ -10,13 +10,17 @@ import {MatListModule} from '@angular/material/list';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
+
 export class DashboardComponent implements OnInit {
-  constructor(private router: Router, private _snackBar: MatSnackBar) {}
+  userData:any =[];
+
+  constructor(private router: Router, private _snackBar: MatSnackBar) {
+      
+  }
 
   ngOnInit(): void {}
 
   logout() {
-    //todo
     window.localStorage.removeItem("token");
     this.router.navigateByUrl('/auth/login');
     this._snackBar.open('Log Out Successfully!', '', {
@@ -24,3 +28,4 @@ export class DashboardComponent implements OnInit {
     });
   }
 }
+
